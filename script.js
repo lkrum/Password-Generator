@@ -1,4 +1,3 @@
-// Assignment code here
 // Need the following variables:
 // selected length of the password: 8< x <128 
 // array of lowercase letters
@@ -25,13 +24,14 @@
 // IF pushing to a mega-array randomly generate a number to pull a character from the array
 // IF pushing to a mega-array, remember to set the array back to an empty array at the start of the process!
 // return the generated password
+
+
 // variables:
 var chooseLength;
 var passLengthMin = 8;
 var passLengthMax = 128;
 var lower = "abcdefghijklmnopqrstuvwxyz".split("");
-var upper = "abcdefghijklmnopqrstuvwxyz".split("");
-// upper = upper.toUpperCase();
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var numb = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
 var passOptions;
@@ -45,12 +45,11 @@ var passLength = window.prompt("How many characters do you want in your password
   if ((passLength < passLengthMin) && (passLength > passLengthMax)) {
     window.alert("Invalid character count. Please select a password length in between 8 and 128 characters");
   } else if (!passLength) {
-    window.alert("Please choose a valid input.")
-  }
-    else { 
+    window.alert("Please choose a valid input.");
+  }    
   // function chooseCharacters() {
-    var lower = window.prompt("Do you want to include lowercase letters? Type 'yes' or 'no.'");
-    if (lower == "yes") {
+var lower = window.prompt("Do you want to include lowercase letters? Type 'yes' or 'no.'");
+  if (lower == "yes") {
       var passOptions = passOptions.push(lower);
     }
     var upper = window.prompt("Do you want to include uppercase letters? Type 'yes' or 'no.'");
@@ -69,8 +68,9 @@ var passLength = window.prompt("How many characters do you want in your password
     console.log(passOptions);
 
   }
-  return password;
-}
+  // return password;
+
+
 
 // // Prompt validation
 // function validateChoices () {
