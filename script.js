@@ -27,18 +27,20 @@
   // return the generated password
 // variables:
 var chooseLength;
-var passLength = [8, 128];
+var passLengthMin = 8;
+var passLengthMax = 128;
 var lower = "abcdefghijklmnopqrstuvwxyz".split("");
 var upper = "abcdefghijklmnopqrstuvwxyz".split("");
 // upper = upper.toUpperCase();
-var Numb = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numb = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
+var passOptions;
 
 // program begins
 var generatePassword = function () {  
 var passLength = window.prompt("How many characters do you want in your password?");
-if (passLength.length < 7 || passLength.length > 127) {
-  window.alert("Invalid character count. Please select a password length in between 7 and 127 characters");
+if ((passLength < passLengthMin) || (passLength > passLengthMax)) {
+  window.alert("Invalid character count. Please select a password length in between 8 and 128 characters");
   generatePassword();
  } else if (!passLength) {
   window.alert("Please choose a valid input.")
@@ -47,9 +49,24 @@ if (passLength.length < 7 || passLength.length > 127) {
 
 function chooseCharacters(){
 var lower = window.prompt("Do you want to include lowercase letters? Type 'yes' or 'no.'");
+  if (lower == "yes") {
+  var passOptions = passOptions.push(lower);
+  }
 var upper= window.prompt("Do you want to include uppercase letters? Type 'yes' or 'no.'");
-var Numb = window.prompt("Do you want to include numbers? Type 'yes' or 'no.'");
+  if (upper == "yes") {
+  var passOptions = passOptions.push(upper);
+  }
+var numb = window.prompt("Do you want to include numbers? Type 'yes' or 'no.'");
+    if (numb == "yes") {
+  var passOptions = passOptions.push(numb);
+  }
 var specialChar = window.prompt("Do you want to include special characters? Type 'yes' or 'no.'");
+    if (specialChar == "yes") {
+  var passOptions = passOptions.push(specialChar);
+}
+
+console.log(passOptions);
+
 }
 
 // Prompt validation
@@ -63,6 +80,8 @@ if (
  }
 chooseCharacters ();
 }
+
+
 
 // if 
 // (lower == "yes")
