@@ -30,11 +30,11 @@
 var chooseLength;
 var passLengthMin = 8;
 var passLengthMax = 128;
-var lower = "abcdefghijklmnopqrstuvwxyz".split("");
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-var numb = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
-var passOptions;
+var lowerArray = "abcdefghijklmnopqrstuvwxyz".split("");
+var upperArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var numeralArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialCharArray = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
+var passOptions = [];
 var password = "";
 
 // program begins
@@ -42,30 +42,42 @@ var generatePassword = function () {
   
 // password length prompt 
 var passLength = window.prompt("How many characters do you want in your password?");
-  if ((passLength < passLengthMin) && (passLength > passLengthMax)) {
+  if ((passLength < 8 ) || (passLength > 128)) {
     window.alert("Invalid character count. Please select a password length in between 8 and 128 characters");
-  } else if (!passLength) {
+    // return; 
+  } 
+  if (!passLength) {
     window.alert("Please choose a valid input.");
   }    
-  // function chooseCharacters() {
-var lower = window.prompt("Do you want to include lowercase letters? Type 'yes' or 'no.'");
-  if (lower == "yes") {
-      var passOptions = passOptions.push(lower);
+
+// function chooseCharacters() {
+var lower = window.confirm("Do you want to include lowercase letters? Type 'yes' or 'no.'");
+console.log(lower);
+var upper = window.confirm("Do you want to include uppercase letters? Type 'yes' or 'no.'");
+var numb = window.confirm("Do you want to include numbers? Type 'yes' or 'no.'");
+var specialChar = window.confirm("Do you want to include special characters? Type 'yes' or 'no.'");
+
+// combining options into single mega-array
+if (lower) {
+  passOptions = passOptions.concat(lowerArray);
     }
-    var upper = window.prompt("Do you want to include uppercase letters? Type 'yes' or 'no.'");
-    if (upper == "yes") {
-      var passOptions = passOptions.push(upper);
+if (upper) {
+  passOptions = passOptions.concat(upperArray);
     }
-    var numb = window.prompt("Do you want to include numbers? Type 'yes' or 'no.'");
-    if (numb == "yes") {
-      var passOptions = passOptions.push(numb);
+if (numb) {
+  passOptions = passOptions.concat(numeralArray);
     }
-    var specialChar = window.prompt("Do you want to include special characters? Type 'yes' or 'no.'");
-    if (specialChar == "yes") {
-      var passOptions = passOptions.push(specialChar);
+if (specialChar) {
+  passOptions = passOptions.concat(specialCharArray);
     }
 
-    console.log(passOptions);
+ console.log(passOptions)   
+    
+// for (var i = p - 1; i < passwordLength; i++)   
+// var  = Math.floor(Math.random() *  ))
+
+
+    // console.log(passOptions);
 
   }
   // return password;
