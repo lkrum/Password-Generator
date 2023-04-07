@@ -17,24 +17,18 @@ var generatePassword = function () {
   if ((passLength < 8) || (passLength > 128)) {
     window.alert("Invalid character count. Please select a password length in between 8 and 128 characters.");
     return;
-  } if (!passLength) {
+  } if (isNaN(passLength)) {
     window.alert("Please choose a valid input.");
+    return;
   }
 
   // choose characters to include in password
   var lower = window.confirm("Do you want to include lowercase letters?");
-  console.log(lower)
   var upper = window.confirm("Do you want to include uppercase letters?");
-  console.log(upper)
-
   var numeral = window.confirm("Do you want to include numbers?");
-  console.log(numeral)
-
   var specialChar = window.confirm("Do you want to include special characters?");
-  console.log(specialChar)
 
-
-  // validate that at least one criteria is true
+  // validate that at least one character option has been selected
   if (
     (lower === false) &&
     (upper === false) &&
@@ -60,14 +54,14 @@ var generatePassword = function () {
 
   // Randomly selecting characters from array
   var userPassword = "";
-  for (var x = 0; x < passLength; x++) {  
-  var randomNumber = Math.floor(Math.random() * passOptions.length);   
-  userPassword += passOptions[randomNumber];
-}  
-
+  for (var x = 0; x < passLength; x++) {
+    var randomNumber = Math.floor(Math.random() * passOptions.length);
+    userPassword += passOptions[randomNumber];
+  }
   return userPassword;
 }
 
+// Starter code starts here
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
