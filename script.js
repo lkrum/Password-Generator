@@ -1,9 +1,3 @@
-
-// IF pushing to a mega-array randomly generate a number to pull a character from the array
-// IF pushing to a mega-array, remember to set the array back to an empty array at the start of the process!
-// return the generated password
-
-
 // variables:
 var chooseLength;
 var passLengthMin = 8;
@@ -21,12 +15,10 @@ var generatePassword = function () {
   // password length prompt 
   var passLength = window.prompt("How many characters do you want in your password?");
   if ((passLength < 8) || (passLength > 128)) {
-    window.alert("Invalid character count. Please select a password length in between 8 and 128 characters");
+    window.alert("Invalid character count. Please select a password length in between 8 and 128 characters.");
     return;
-  }
-  if (!passLength) {
+  } if (!passLength) {
     window.alert("Please choose a valid input.");
-    return;
   }
 
   // choose characters to include in password
@@ -74,7 +66,6 @@ var generatePassword = function () {
 }  
 
   return userPassword;
-
 }
 
 // Get references to the #generate element
