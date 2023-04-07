@@ -11,20 +11,21 @@ N/A
 ## Usage
 Follow the page prompts to create a randomly generated password. 
 1. Click the "Generate Password" button
-2. Designate a password length in between 8 and 128 characters
-   *Note*: If you select a length outside of the allowed range or input a value that isn't a number, you will get an alert to choose a different value.
+2. Designate a password length in between 8 and 128 characters 
+  - **Note**: If you select a length outside of the allowed range or input a value that isn't a number, you will get an alert to choose a different value.
 3. Choose whether or not to include lowercase letters
 4. Choose whether or not to include uppercase letters
 5. Choose whether or not to include numbers
 6. Choose whether or not to include special characters
-   *Note*: If no criteria is chosen, you will get an alert to select at least one option.
-  *Additional note*: You may need to refresh your page if generating multiple passwords.
+- **Note**: If no criteria is chosen, you will get an alert to select at least one option.
+- **Additional note**: You may need to refresh your page if generating multiple passwords.
 
 ![Main Display](./assets/PasswordGeneratorMain.png)
 ![Prompts](./assets/Prompt.png)
 ![Password](./assets/GeneratedPassword.png)
 
 ## Credits 
+My starter code was taken from the GitHub repository [friendly-parakeet](https://github.com/coding-boot-camp/friendly-parakeet.git). 
 
 - alert function [w3schoools](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
 - prompt function [w3schoools](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
