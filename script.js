@@ -31,11 +31,18 @@ var generatePassword = function () {
 
   // choose characters to include in password
   var lower = window.confirm("Do you want to include lowercase letters?");
+  console.log(lower)
   var upper = window.confirm("Do you want to include uppercase letters?");
-  var numeral = window.confirm("Do you want to include numbers?");
-  var specialChar = window.confirm("Do you want to include special characters?");
+  console.log(upper)
 
-  // validate that at least one criteria is true)
+  var numeral = window.confirm("Do you want to include numbers?");
+  console.log(numeral)
+
+  var specialChar = window.confirm("Do you want to include special characters?");
+  console.log(specialChar)
+
+
+  // validate that at least one criteria is true
   if (
     (lower === false) &&
     (upper === false) &&
@@ -69,8 +76,6 @@ var generatePassword = function () {
   return userPassword;
 
 }
-
-// function generatePassword()
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
